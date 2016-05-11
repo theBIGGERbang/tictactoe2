@@ -35,9 +35,9 @@ def draw(a,b,c,d,e,f,g,h,i):
 	print(str(g)+'|'+str(h)+'|'+str(i))
 draw(7,8,9,4,5,6,1,2,3)
 print('\n')
-def dg():	
-	draw(grid[6], grid[7], grid[8], grid[3], grid[4], grid[5], grid[0], grid[1], grid[2])
-	print('\n')
+def dg():
+		draw(grid[6], grid[7], grid[8], grid[3], grid[4], grid[5], grid[0], grid[1], grid[2])
+		print('\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n')
 a=1
 turn=1
 for n in range(10):
