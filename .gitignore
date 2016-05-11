@@ -9,6 +9,20 @@ if True:
 		for n in range(3):
 			if grid[3]==grid[6]and grid[6]==grid[0] and grid[0]=='X':
 				win='player 1'
+			elif grid[3*n]==grid[3*n+1] and grid [3*n=1]==grid[3*n+2] and grid[3*n] == 'X':
+				win='player 1'
+			elif grid[6]== grid[4] and grid[4]==grid[2] and grid[2]=='X':
+				win='player 1'
+			elif grid[8]== grid[4] and grid[4]==grid[0] and grid[0]=='X':
+				win='player 1'
+			if grid[3]==grid[6]and grid[6]==grid[0] and grid[0]=='O':
+				win='player 2'
+			elif grid[3*n]==grid[3*n+1] and grid [3*n=1]==grid[3*n+2] and grid[3*n] == 'O':
+				win='player 2'
+			elif grid[6]== grid[4] and grid[4]==grid[2] and grid[2]=='O':
+				win='player 2'
+			elif grid[8]== grid[4] and grid[4]==grid[0] and grid[0]=='O':
+				win='player 2'
 			
 	def draw(a,b,c,d,e,f,g,h,i):
 		print(str(a)+'|'+str(b)+'|'+str(c))
@@ -56,4 +70,4 @@ if True:
 				continue
 		except:
 			break
-	print(win)
+	print(win+' won')
