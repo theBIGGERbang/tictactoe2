@@ -1,7 +1,15 @@
-while True:
+if True:
+	win='test'
 	grid=[' ',' ',' ',' ',' ',' ',' ',' ',' ']
+	win='none'
 	def hl():
 		print('-----')
+	def checkwin():
+		global win
+		for n in range(3):
+			if grid[3*n]==grid[3*n+1]==grid[3*n+2]=='X':
+				win='player 1'
+			
 	def draw(a,b,c,d,e,f,g,h,i):
 		print(str(a)+'|'+str(b)+'|'+str(c))
 		hl()
@@ -14,19 +22,37 @@ while True:
 		draw(grid[6], grid[7], grid[8], grid[3], grid[4], grid[5], grid[0], grid[1], grid[2])
 	a=1
 	turn=1
-	try:
-		for n in range(10):
-			inp=int(input('player 1'))-1
-			if grid[inp] == ' ':
-				grid[inp]='X'
-				turn=2
-			else:
-				print('please ener a valid number')
+	for n in range(6):
+		try:
+			try:
+				if turn==1:
+					inp=int(input('player 1'))-1
+					if grid[inp] == ' ':
+						grid[inp]='X'
+						turn=2
+							
+					else:
+						print('please ener a valid square')
+						continue
+				#checkwin()
+				dg()
+				er=grid.index(' ')
+				if turn==2:
+					inp=int(input('player 2'))-1
+					if grid[inp] == ' ':
+						grid[inp]='O'
+						turn=1
+						
+					else:
+						print('please ener a valid square')
+						continue
+				#checkwin()
+				dg()
+				
+				er=grid.index(' ')
+				
+			except:
 				continue
-			
-			dg()
-			#a+=1
-	
-	except:
-		print('restarting')
-		continue
+		except:
+			break
+	print(win)
