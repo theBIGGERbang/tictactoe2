@@ -1,73 +1,76 @@
-if True:
-	win='test'
-	grid=[' ',' ',' ',' ',' ',' ',' ',' ',' ']
-	win='none'
-	def hl():
-		print('-----')
-	def checkwin():
-		global win
-		for n in range(3):
-			if grid[3]==grid[6]and grid[6]==grid[0] and grid[0]=='X':
-				win='player 1'
-			elif grid[3*n]==grid[3*n+1] and grid [3*n=1]==grid[3*n+2] and grid[3*n] == 'X':
-				win='player 1'
-			elif grid[6]== grid[4] and grid[4]==grid[2] and grid[2]=='X':
-				win='player 1'
-			elif grid[8]== grid[4] and grid[4]==grid[0] and grid[0]=='X':
-				win='player 1'
-			if grid[3]==grid[6]and grid[6]==grid[0] and grid[0]=='O':
-				win='player 2'
-			elif grid[3*n]==grid[3*n+1] and grid [3*n=1]==grid[3*n+2] and grid[3*n] == 'O':
-				win='player 2'
-			elif grid[6]== grid[4] and grid[4]==grid[2] and grid[2]=='O':
-				win='player 2'
-			elif grid[8]== grid[4] and grid[4]==grid[0] and grid[0]=='O':
-				win='player 2'
-			
-	def draw(a,b,c,d,e,f,g,h,i):
-		print(str(a)+'|'+str(b)+'|'+str(c))
-		hl()
-		print(str(d)+'|'+str(e)+'|'+str(f))
-		hl()
-		print(str(g)+'|'+str(h)+'|'+str(i))
-	draw(1,2,3,4,5,6,7,8,9)
-	print('\n')
-	def dg():	
-		draw(grid[6], grid[7], grid[8], grid[3], grid[4], grid[5], grid[0], grid[1], grid[2])
-		print('\n')
-	a=1
-	turn=1
-	for n in range(6):
-		try:
-			try:
-				if turn==1:
-					inp=int(input('player 1'))-1
-					if grid[inp] == ' ':
-						grid[inp]='X'
-						turn=2
-							
-					else:
-						print('please ener a valid square')
-						continue
-				checkwin()
-				dg()
-				er=grid.index(' ')
-				if turn==2:
-					inp=int(input('player 2'))-1
-					if grid[inp] == ' ':
-						grid[inp]='O'
-						turn=1
-						
-					else:
-						print('please ener a valid square')
-						continue
-				checkwin()
-				dg()
-				
-				er=grid.index(' ')
-				
-			except:
-				continue
-		except:
+win='test'
+grid=[' ',' ',' ',' ',' ',' ',' ',' ',' ']
+win='none'
+def hl():
+	print('-----')
+def checkwin():
+	global win
+	for n in range(3):
+		if grid[3]==grid[6]and grid[6]==grid[0] and grid[0]=='X':
+			win='player 1'
+		elif grid[3*n]==grid[3*n+1] and grid [3*n+1]==grid[3*n+2] and grid[3*n] == 'X':
+			win='player 1'
+		elif grid[6]== grid[4] and grid[4]==grid[2] and grid[2]=='X':
+			win='player 1'
+		elif grid[8]== grid[4] and grid[4]==grid[0] and grid[0]=='X':
+			win='player 1'
+		if grid[3]==grid[6]and grid[6]==grid[0] and grid[0]=='O':
+			win='player 2'
+		elif grid[3*n]==grid[3*n+1] and grid [3*n+1]==grid[3*n+2] and grid[3*n] == 'O':
+			win='player 2'
+		elif grid[6]== grid[4] and grid[4]==grid[2] and grid[2]=='O':
+			win='player 2'
+		elif grid[8]== grid[4] and grid[4]==grid[0] and grid[0]=='O':
+			win='player 2'
+		if win == 'none':
+			n='ohing'
+		else:
 			break
-	print(win+' won')
+		
+def draw(a,b,c,d,e,f,g,h,i):
+	print(str(a)+'|'+str(b)+'|'+str(c))
+	hl()
+	print(str(d)+'|'+str(e)+'|'+str(f))
+	hl()
+	print(str(g)+'|'+str(h)+'|'+str(i))
+draw(7,8,9,4,5,6,1,2,3)
+print('\n')
+def dg():	
+	draw(grid[6], grid[7], grid[8], grid[3], grid[4], grid[5], grid[0], grid[1], grid[2])
+	print('\n')
+a=1
+turn=1
+for n in range(10):
+	try:
+		try:
+			if turn==1:
+				inp=int(input('player 1'))-1
+				if grid[inp] == ' ':
+					grid[inp]='X'
+					turn=2
+						
+				else:
+					print('please ener a valid square')
+					continue
+			checkwin()
+			dg()
+			er=grid.index(' ')
+			if turn==2:
+				inp=int(input('player 2'))-1
+				if grid[inp] == ' ':
+					grid[inp]='O'
+					turn=1
+					
+				else:
+					print('please ener a valid square')
+					continue
+			checkwin()
+			dg()
+			
+			er=grid.index(' ')
+			
+		except:
+			continue
+	except:
+		break
+print(win+' won')
